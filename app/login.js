@@ -1,23 +1,53 @@
 $(document).ready(function () {
-    $("#btn_login").click(function () {
-      var username = $("#txusername").val();
-      var password = $("#txpassword").val();
-  
-      if (username === "" || password === "") {
-        alert("Username dan password harus diisi!");
-      } else $.post("login/cek_login",
+  $("#btn_login").click(function () {
+    var username = $("#txtusername").val();
+    var password = $("#txtpassword").val();
+
+    if (username === "" || password === "") {
+      Swal.fire({
+        title: "Error!",
+        text: "Username dan password belum dimasukkan",
+        icon: "error",
+        confirmButtonText: "OK",
+      });
+    } else {
+      $.post(
+        "login/check_login",
         {
-          username: $("#txusername").val(),
-          password: $("#txpassword").val(),
+          username: username,
+          password: password,
         },
         function (data, status) {
-          console.log(data.status);
-          if (data.status === 'ERROR') {
-            alert("Username dan password tidak terdaftar!");
+          if (data.status === "Error") {
+            Swal.fire({
+              title: "Error!",
+              text: "Username atau password belum terdaftar",
+              icon: "error",
+              confirmButtonText: "OK",
+            });
           } else {
-            alert("Berhasil Login");
-            window.location.href = "http://localhost/ci_master/home";
+            Swal.fire({
+              title: "Success!",
+              text: "Berhasil",
+              icon: "success",
+              confirmButtonText: "OK",
+            }).then((result) => {
+              if (result.isConfirmed) {
+                window.location.href = "http://localhost/ci_master/home";
+              }
+            });
           }
-        }, 'json');
-    });
+        },
+        "json"
+      ).fail(function (jqXHR, textStatus, errorThrown) {
+        Swal.fire({
+          title: "Error!",
+          text: "An error occurred while processing your request.",
+          icon: "error",
+          confirmButtonText: "OK",
+        });
+        console.log("Request failed: " + textStatus + ", " + errorThrown);
+      });
+    }
   });
+});
