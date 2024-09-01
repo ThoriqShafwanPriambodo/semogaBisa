@@ -30,10 +30,10 @@ $(document).ready(function () {
               title: "Success!",
               text: "Berhasil",
               icon: "success",
-              confirmButtonText: "OK",
+              confirmButtonText: "OK", 
             }).then((result) => {
               if (result.isConfirmed) {
-                window.location.href = "http://localhost/ci_master/home";
+                window.location.href = "http://localhost/semogaBisa/home";
               }
             });
           }

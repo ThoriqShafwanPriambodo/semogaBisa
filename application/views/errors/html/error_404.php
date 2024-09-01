@@ -99,7 +99,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="text">
         <h1>404 Error</h1>  
       <h2>Couldn't launch :(</h2>
-         <h3>Page Not Found - lets take you <a href="http://localhost/ci_master">BACK</a></h3> 
+         <h3>Page Not Found - lets take you <a href="http://localhost/semogaBisa">BACK</a></h3> 
     </div>
 
 </body>
