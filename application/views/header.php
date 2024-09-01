@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title class="tit">Dashboard</title>
@@ -195,7 +195,7 @@
                                 </li>
 
                                 <li class="submenu-item  ">
-                                    <a href="#" class="submenu-link">Grup Kerja</a>
+                                    <a href="<?php echo base_url('workgroup')?>" class="submenu-link">Grup Kerja</a>
                                 </li>
 
                                 <li class="submenu-item  ">

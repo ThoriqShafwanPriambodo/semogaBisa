@@ -1,7 +1,7 @@
 $(document).ready(function () {
   $("#btn_login").click(function () {
-    var username = $("#txtusername").val();
-    var password = $("#txtpassword").val();
+    var username = $("#txusername").val();
+    var password = $("#txpassword").val();
 
     if (username === "" || password === "") {
       Swal.fire({
@@ -12,7 +12,7 @@ $(document).ready(function () {
       });
     } else {
       $.post(
-        "login/check_login",
+        "login/cek_login",
         {
           username: username,
           password: password,
