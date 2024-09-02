@@ -146,7 +146,8 @@ function inputangka(evt) {
 }
 
 function load_data() {
-  $.post("kantor/load_data",
+  $.post("http://freezing.free.nf/kantor/load_data",
+  //$.post("http://imst.tiptech.xyz:8018/pegawai/load_data",
     {
 
     },
